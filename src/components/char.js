@@ -5,7 +5,7 @@ import queryStrings from 'query-string'
 const Char = ({ location }) => {
     //get the id of the item
     let {id} = queryStrings.parse(location.search);
-    
+
     const [character, setCharacter] = useState()
     const [loading, setLoading] = useState(true);
     let [index, setIndex] = useState(id);
@@ -24,9 +24,9 @@ const Char = ({ location }) => {
 
     //functions to handle the next and previous buttons
     const handleNext = () => {
-        if(index > 70) {
-            setIndex(1)        
-            setLoading(true)    
+        if(index > 62) {  
+            setLoading(true) 
+            setIndex(1)         
         }
         else{  
             setLoading(true)  
@@ -36,9 +36,9 @@ const Char = ({ location }) => {
     }
 
     const handlePrev = () => {
-        if(index < 0) {
-            setIndex(70)        
-            setLoading(true)    
+        if(index < 1) {   
+            setLoading(true)  
+            setIndex(62)       
         }
         else{  
             setLoading(true)  

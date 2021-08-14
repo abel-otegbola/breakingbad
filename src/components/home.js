@@ -37,11 +37,11 @@ const Home = () => {
     //functions to handle the next and previous buttons
     const handleNext = () => {
         setLoading(true)
-        setQuery(query > 70 ? 0 : query += 10)
+        setQuery(query > 62 ? 0 : query += 10)
     }
     const handlePrev = () => {
         setLoading(true)
-        setQuery(query < 0 ? 70 : query -= 10)
+        setQuery(query < 0 ? 60 : query -= 10)
     }
 
 return (
