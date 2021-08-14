@@ -10,6 +10,24 @@ const Char = ({ location }) => {
     const [loading, setLoading] = useState(true);
     let [index, setIndex] = useState(id);
 
+    
+    //functions to handle the next and previous buttons
+    const handleNext = () => {
+        setLoading(true)
+        let nextIndex = index+1;
+        if(nextIndex > 57) {
+            nextIndex = 1
+        }
+        setIndex(nextIndex);
+    }
+    const handlePrev = () => {
+        setLoading(true)
+        let prevIndex = index-1;
+        if(prevIndex < 1) {
+            prevIndex = 57
+        }
+        setIndex(prevIndex);
+    }
 
     useEffect(() => {
         //get the item from the api
@@ -21,30 +39,6 @@ const Char = ({ location }) => {
         fetchData()
     }, [index])
 
-
-    //functions to handle the next and previous buttons
-    const handleNext = () => {
-        if(index > 62) {  
-            setLoading(true) 
-            setIndex(1)         
-        }
-        else{  
-            setLoading(true)  
-            setIndex(index+1)
-        }
-        console.log(index)
-    }
-
-    const handlePrev = () => {
-        if(index < 1) {   
-            setLoading(true)  
-            setIndex(62)       
-        }
-        else{  
-            setLoading(true)  
-            setIndex(index-1)
-        }
-    }
 
     return (
         loading === true ? 
